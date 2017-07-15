@@ -1,0 +1,8 @@
+{
+  "name": "weather-js",
+  "version": "1.0.0",
+  "main": "js/weather.js",
+  "repository": "https://github.com/nicolasgrancher/weather-js",
+  "author": "Nicolas <nicolas.grancher@gmail.com>",
+  "license": "MIT"
+}
