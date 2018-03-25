@@ -58,21 +58,19 @@ function heatIndex(Tc, R, P) {
         return Tc;
     }
 
-    var c1 = -42.379;
-    var c2 = 2.04901523;
-    var c3 = 10.14333127;
-    var c4 = -0.22475541;
-    var c5 = -6.83783 * 0.001;
-    var c6 = -5.481717;
-    var c7 = 1.22874 * 0.001;
-    var c8 = 8.5282 * 0.0001;
-    var c9 = -1.99 * 0.000001;
+    var c1 = -8.784695;
+    var c2 = 1.61139411;
+    var c3 = 2.338549;
+    var c4 = -0.14611605;
+    var c5 = -1.2308094 * 0.01;
+    var c6 = -1.6424828 * 0.01;
+    var c7 = 2.211732 * 0.001;
+    var c8 = 7.2546 * 0.0001;
+    var c9 = -3.582 * 0.000001;
 
-    var Tf = this.celsiusToFahrenheit(Tc);
+    var HI = c1 + c2 * Tc + c3 * R + c4 * Tc * R + c5 * Tc * Tc + c6 * R * R + c7 * Tc * Tc * R + c8 * Tc * R * R + c9 * Tc * Tc * R * R;
 
-    var HI = c1 + c2 * Tf + c3 * R + c4 * Tf * R + c5 * Tf * Tf + c6 * R * R + c7 * Tf * Tf * R + c8 * Tf * R * R + c9 * Tf * Tf * R * R;
-
-    return this.fahrenheitToCelsius(HI);
+    return HI;
 }
 
 /**
